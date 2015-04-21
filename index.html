@@ -1,4 +1,32 @@
----
-layout: default
----
-<h4>Drona - Academy of Engineering Studies </h4>
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<head>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<style>
+	#map { height: 750px;}
+</style>
+
+</head>
+
+<body>
+<div id="map"></div>
+<script>
+// create a map in the "map" div, set the view to a given place and zoom
+var map = L.map('map').setView([9.314715, 76.617440], 10);
+
+// add an OpenStreetMap tile layer
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// add a marker in the given location, attach some popup content to it and open the popup
+L.marker([9.314715, 76.617440]).addTo(map)
+    .bindPopup('Drona <br> Academy of Engineering Studies')
+    .openPopup();
+</script>
+</body>
+
+</html>
+
