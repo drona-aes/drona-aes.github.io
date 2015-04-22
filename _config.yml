@@ -1,9 +1,10 @@
 # _config.yml
 #
 
-url: "http://drona.info"
+name: "drona.info"
 
-# 
+url: "http://0.0.0.0:4000"
+baseurl: ""
+
 gems:
   - jekyll-sitemap
-

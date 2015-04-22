@@ -1,2 +1,3 @@
-# drona-aes.github.io
+# drona.info
+
 Info page for 'Drona Academy of Engineering Studies'
