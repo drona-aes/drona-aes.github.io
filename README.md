@@ -1,3 +1,3 @@
 # drona.info
 
-Info page for 'Drona Academy of Engineering Studies'
+Webpage for 'Drona Academy of Engineering Studies'

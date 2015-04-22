@@ -3,13 +3,19 @@
 
 @import "bootstrap-scss/bootstrap";
 
+body {
+	height: 100%;
+  padding-top: 50px;
+}
+
 html, #map {
 	height: 100%;
 	padding:0;
 	margin: 0;
 }
-body {
-  //min-height: 1000px;
-	height: 100%;
-  padding-top: 50px;
+
+.brand_style_change {
+	font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+	color: Red;
+	font-size: 1.3em;
 }
