@@ -5,16 +5,35 @@ layout: default
 <div id="map"></div>
 
 <script>
-// create a map in the "map" div, set the view to a given place and zoom
-var map = L.map('map').setView([9.314715, 76.617440], 12);
+  var cities = new L.LayerGroup();
 
-// add an OpenStreetMap tile layer
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+  L.marker([9.314715, 76.617440],riseOnHover=true).bindPopup('Drona<br>Academy of Engineering Studies').addTo(cities),
+  L.marker([9.319404, 76.608465]).bindPopup('Chengannur Railway Station').addTo(cities);
 
-// add a marker in the given location, attach some popup content to it and open the popup
-L.marker([9.314715, 76.617440]).addTo(map)
-    .bindPopup('Drona <br> Academy of Engineering Studies')
-    .openPopup();
+
+	var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+	     			   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			mbUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+
+	var grayscale   = L.tileLayer(mbUrl, {id: 'varunb.j1ii5cmn', attribution: mbAttr}),
+	    streets  = L.tileLayer(mbUrl, {id: 'varunb.j330e0e2',   attribution: mbAttr});
+
+	var map = L.map('map', {
+			center: [9.318205, 76.613991],
+			zoom: 15,
+			layers: [streets, cities]
+		  });
+
+	var baseLayers = {
+			"Grayscale": grayscale,
+			"Streets": streets
+		  };
+
+	var overlays = {
+			"Places": cities
+    	};
+
+		L.control.layers(baseLayers, overlays).addTo(map);
+
 </script>

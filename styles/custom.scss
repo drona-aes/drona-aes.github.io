@@ -4,14 +4,15 @@
 @import "bootstrap-scss/bootstrap";
 
 body {
-	height: 100%;
-  padding-top: 50px;
+  padding: 0;
+	margin: 0;
 }
 
-html, #map {
-	height: 100%;
-	padding:0;
-	margin: 0;
+#map {
+	position: absolute;
+	top: 50px;
+	bottom: 0;
+	width: 100%;
 }
 
 .brand_style_change {
