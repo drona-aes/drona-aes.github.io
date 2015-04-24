@@ -5,10 +5,10 @@ layout: default
 <div id="map"></div>
 
 <script>
-  var cities = new L.LayerGroup();
+  var places = new L.LayerGroup();
 
-  L.marker([9.314715, 76.617440],riseOnHover=true).bindPopup('Drona<br>Academy of Engineering Studies').addTo(cities),
-  L.marker([9.319404, 76.608465]).bindPopup('Chengannur Railway Station').addTo(cities);
+  L.marker([9.314715, 76.617440]).bindPopup('Drona<br>Academy of Engineering Studies').addTo(places);
+  //L.marker([9.319404, 76.608465]).bindPopup('Chengannur Railway Station').addTo(places);
 
 
 	var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -20,20 +20,26 @@ layout: default
 	    streets  = L.tileLayer(mbUrl, {id: 'varunb.j330e0e2',   attribution: mbAttr});
 
 	var map = L.map('map', {
-			center: [9.318205, 76.613991],
-			zoom: 15,
-			layers: [streets, cities]
+			//center: [9.318205, 76.613991],
+      center: [9.314715, 76.617440],
+			zoom: 16,
+			layers: [streets, places]
 		  });
 
 	var baseLayers = {
-			"Grayscale": grayscale,
+			//"Grayscale": grayscale,
 			"Streets": streets
 		  };
 
 	var overlays = {
-			"Places": cities
+			"Places": places
     	};
 
 		L.control.layers(baseLayers, overlays).addTo(map);
-
+    /*var polygon = L.polygon([
+        [9.314774,76.617361],
+        [9.3147,76.617256],
+        [9.314584,76.617374],
+        [9.31466,76.617457]
+    ]).bindPopup("Drona").addTo(map);*/
 </script>
