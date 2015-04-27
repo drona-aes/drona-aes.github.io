@@ -6,9 +6,9 @@ layout: contact
 <div id="map"></div>
 
 <script>
-  var places = new L.LayerGroup();
+ var places = new L.LayerGroup();
 
-  L.marker([9.314715, 76.617440]).bindPopup('Drona<br>Academy of Engineering Studies').addTo(places);
+/*  L.marker([9.314715, 76.617440]).bindPopup('Drona<br>Academy of Engineering Studies').addTo(places);*/
   //L.marker([9.319404, 76.608465]).bindPopup('Chengannur Railway Station').addTo(places);
 
 
@@ -28,7 +28,7 @@ layout: contact
 		  });
 
 	var baseLayers = {
-			//"Grayscale": grayscale,
+			"Grayscale": grayscale,
 			"Streets": streets
 		  };
 
@@ -36,7 +36,7 @@ layout: contact
 			"Places": places
     	};
 
-		L.control.layers(baseLayers, overlays).addTo(map);
+	/*	L.control.layers(baseLayers, overlays).addTo(map);*/
     /*var polygon = L.polygon([
         [9.314774,76.617361],
         [9.3147,76.617256],
