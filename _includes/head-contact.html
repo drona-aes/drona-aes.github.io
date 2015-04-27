@@ -1,0 +1,118 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<style type="text/css">
+/*  body{
+      font-family:Arial, Helvetica, sans-serif;
+      margin:10px;
+  }*/
+  body {
+  padding: 0;
+	margin: 0;
+
+}
+html{
+  overflow-x: hidden;
+/*overflow-y: hidden;*/
+}
+#map {
+	position: absolute;
+	top: 0px;
+	bottom: 0;
+	width: 100%;
+}
+  .wrapper{
+      position:absolute;
+      font-family:Arial, Helvetica, sans-serif;
+      padding-top:90px;
+      padding-left:50px;
+      /*width:80%;*/
+    /*  margin:auto;*/
+  }
+  .wrapper .text{
+      font-family:Arial, Helvetica, sans-serif;
+      padding-top:50px;
+  }
+  .wrapper h1{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:26px;
+  }
+  .longText{
+      margin-top:20px;
+      width:600px;
+      font:18px/24px Arial, Helvetica, sans-serif;
+      color:gray;
+  }
+  span.btn{
+      padding:10px;
+      display:inline-block;
+      cursor:pointer;
+      font:12px/14px Arial, Helvetica, sans-serif;
+      color:#aaa;
+      background-color:#eee;
+      -moz-border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-box-shadow:#999 2px 0px 3px;
+      -webkit-box-shadow:#999 2px 0px 3px;
+  }
+  span.btn:hover{
+      background-color:#000;
+  }
+
+      /*
+      custom style for extruder
+      */
+
+  .extruder.left.a .flap{
+      font-size:18px;
+      color:white;
+      top:0;
+      padding:10px 0 10px 10px;
+      background:#772B14;
+      width:30px;
+      position:absolute;
+      right:0;
+      -moz-border-radius:0 10px 10px 0;
+      -webkit-border-top-right-radius:10px;
+      -webkit-border-bottom-right-radius:10px;
+      -moz-box-shadow:#666 2px 0px 3px;
+      -webkit-box-shadow:#666 2px 0px 3px;
+  }
+
+  .extruder.left.a .content{
+      /*border-right:3px solid #772B14;*/
+  }
+
+
+  .extruder.left.a .flap .flapLabel{
+      background:#772B14;
+  }
+</style>
+
+<link href="css/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<link rel="stylesheet" href="{{ "/fonts/font-awesome-4.3.0/css/font-awesome.min.css" | prepend: site.baseurl }}">
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type="text/javascript" src="inc/jquery.hoverIntent.min.js"></script>
+<script type="text/javascript" src="inc/jquery.mb.flipText.js"></script>
+<script type="text/javascript" src="inc/mbExtruder.js"></script>
+<script type="text/javascript">
+  $(function(){
+      $("#extruderLeft").buildMbExtruder({
+          position:"top",
+          width:255,
+          extruderOpacity:.8,
+          hidePanelsOnClose:true,
+          accordionPanels:true,
+          onExtOpen:function(){},
+          onExtContentLoad:function(){},
+          onExtClose:function(){}
+      });
+
+  });
+</script>

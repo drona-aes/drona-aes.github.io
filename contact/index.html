@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: contact
 ---
-<!-- map container -->
-<div id="map"></div>
 
+<!-- map container-->
+<div id="map"></div>
 
 <script>
   var places = new L.LayerGroup();
@@ -23,7 +23,7 @@ layout: default
 	var map = L.map('map', {
 			//center: [9.318205, 76.613991],
       center: [9.314715, 76.617440],
-			zoom: 16,
+			zoom: 14,
 			layers: [streets, places]
 		  });
 
@@ -44,3 +44,18 @@ layout: default
         [9.31466,76.617457]
     ]).bindPopup("Drona").addTo(map);*/
 </script>
+
+<div class="wrapper">
+    <div class="longText" style="position:relative;padding-left:50px">
+        <div id="extruderLeft" class="{title:'Click'}">
+            <div class="voice {panel:'parts/extr.network.html'}"><span class="label"><i class="fa fa-cogs"></i>
+              Controls</span></div>
+            <div class="voice {disabled:true}"><span class="label"><i class="fa fa-thumbs-down"></i>
+              Disabled</span> </div>
+            <div class="voice {}"><a class="label" href="mailto:{{ site.data.customization.email }}"><i class="fa fa-share"></i>
+              Mail</a> </div>
+            <div class="voice {}"><a class="label" href="{{ site.url }}"><i class="fa fa-home"></i>
+              Home</a> </div>
+        </div>
+    </div>
+</div>
