@@ -9,7 +9,6 @@ layout: contact
 /*  L.marker([9.314715, 76.617440]).bindPopup('Drona<br>Academy of Engineering Studies').addTo(places);*/
   //L.marker([9.319404, 76.608465]).bindPopup('Chengannur Railway Station').addTo(places);
 
-
 	var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 	     			   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 				       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -24,6 +23,7 @@ layout: contact
 			zoom: 14,
 			layers: [streets, places]
 		  });
+
 
 	var baseLayers = {
 			"Grayscale": grayscale,
@@ -45,14 +45,67 @@ layout: contact
 <div class="wrapper">
     <div class="longText" style="position:relative;padding-left:50px">
         <div id="extruderLeft" class="{title:'Click'}">
-            <div class="voice {panel:'parts/extr.network.html'}"><span class="label"><i class="fa fa-cogs"></i>
-              Controls</span></div>
-            <div class="voice {disabled:true}"><span class="label"><i class="fa fa-thumbs-down"></i>
-              Disabled</span> </div>
-            <div class="voice {}"><a class="label" href="mailto:{{ site.data.customization.email }}"><i class="fa fa-share"></i>
-              Mail</a> </div>
-            <div class="voice {}"><a class="label" href="{{ site.url }}"><i class="fa fa-home"></i>
-              Home</a> </div>
+          <div class="voice {}"><span class="label"><i class="fa fa-cogs"></i>
+            Controls</span></div>
+            <div><a>Views</a></div>
+          <div class="text">
+            <form>
+              <table>
+                <tr><td><input type="radio" name="baseMap" id="street" checked onClick="setBaseMap(true)" /></td><td>Street</td></tr>
+                <tr><td><input type="radio" name="baseMap" id="grey" onClick="setBaseMap(false)"/></td><td>Grey</td></tr>
+              </table>
+            </form>
+          </div>
+
+
+          <div><a>Places</a></div>
+          <div class="text">
+            <form>
+              <table>
+                <tr><td><input type="checkbox" name="placeMarker" id="railwayChkBox" onchange="setUnsetMarker1(this)"/></td><td>Railway Station</td></tr>
+                <tr><td><input type="checkbox" name="placeMarker" id="busChkBox" onClick="setUnsetMarker2(this)"/></td><td>Bus Stand</td></tr>
+              </table>
+            </form>
+          </div>
+            <div class="voice {panel:'parts/extr.network.html'}"><span class="label"><i class="fa fa-bars"></i>
+              Navigaton</span></div>
         </div>
     </div>
 </div>
+<script>
+
+L.marker([9.314715, 76.617440]).addTo(map).bindPopup("<b>Drona</b><br />Academy of Engineering Studies<br />Chengannur").openPopup();
+var marker1;
+var marker2;
+function setUnsetMarker1(el){
+  if(el.checked){
+    marker1 = new L.Marker([9.319457,76.608253], {draggable:true});
+    map.addLayer(marker1);
+    //L.marker([9.319457,76.608253]).addTo(map).bindPopup("<b>Railway Station</b><br />Chengannur").openPopup();
+    marker1.bindPopup("<b>Railway Station</b><br />Chengannur").openPopup();
+  }
+  else if(!el.checked){
+    map.removeLayer(marker1);
+  }
+}
+function setUnsetMarker2(el){
+  if(el.checked){
+    marker2 = new L.Marker([9.318546,76.612974], {draggable:true});
+    map.addLayer(marker2);
+    //L.marker([9.319457,76.608253]).addTo(map).bindPopup("<b>Railway Station</b><br />Chengannur").openPopup();
+    marker2.bindPopup("<b>KSRTC bus stand</b><br />Chengannur").openPopup();
+  }
+  else if(!el.checked){
+    map.removeLayer(marker2);
+  }
+}
+
+  function setBaseMap(baseMap) {
+    if (baseMap == true){
+      L.tileLayer(mbUrl, {id: 'varunb.j330e0e2',   attribution: mbAttr}).addTo(map);
+    }
+    else{
+      L.tileLayer(mbUrl, {id: 'varunb.j1ii5cmn',   attribution: mbAttr}).addTo(map);
+    }
+  }
+</script>
