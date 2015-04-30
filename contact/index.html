@@ -13,6 +13,7 @@ layout: contact
 	     			   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 				       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 			mbUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+      mbUrl1 = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
 
 	var grayscale   = L.tileLayer(mbUrl, {id: 'varunb.j1ii5cmn', attribution: mbAttr}),
 	    streets  = L.tileLayer(mbUrl, {id: 'varunb.j330e0e2',   attribution: mbAttr});
@@ -52,7 +53,7 @@ layout: contact
             <form>
               <table>
                 <tr><td><input type="radio" name="baseMap" id="street" checked onClick="setBaseMap(true)" /></td><td>Street</td></tr>
-                <tr><td><input type="radio" name="baseMap" id="grey" onClick="setBaseMap(false)"/></td><td>Grey</td></tr>
+                <tr><td><input type="radio" name="baseMap" id="grey" onClick="setBaseMap(false)"/></td><td>Satellite</td></tr>
               </table>
             </form>
           </div>
@@ -79,7 +80,7 @@ var marker1;
 var marker2;
 function setUnsetMarker1(el){
   if(el.checked){
-    marker1 = new L.Marker([9.319457,76.608253], {draggable:true});
+    marker1 = new L.Marker([9.319457,76.608253], {draggable:false});
     map.addLayer(marker1);
     //L.marker([9.319457,76.608253]).addTo(map).bindPopup("<b>Railway Station</b><br />Chengannur").openPopup();
     marker1.bindPopup("<b>Railway Station</b><br />Chengannur").openPopup();
@@ -90,7 +91,7 @@ function setUnsetMarker1(el){
 }
 function setUnsetMarker2(el){
   if(el.checked){
-    marker2 = new L.Marker([9.318546,76.612974], {draggable:true});
+    marker2 = new L.Marker([9.318546,76.612974], {draggable:false});
     map.addLayer(marker2);
     //L.marker([9.319457,76.608253]).addTo(map).bindPopup("<b>Railway Station</b><br />Chengannur").openPopup();
     marker2.bindPopup("<b>KSRTC bus stand</b><br />Chengannur").openPopup();
@@ -105,7 +106,7 @@ function setUnsetMarker2(el){
       L.tileLayer(mbUrl, {id: 'varunb.j330e0e2',   attribution: mbAttr}).addTo(map);
     }
     else{
-      L.tileLayer(mbUrl, {id: 'varunb.j1ii5cmn',   attribution: mbAttr}).addTo(map);
+      L.tileLayer(mbUrl, {id: 'varunb.j1ii5cmn',  attribution: mbAttr}).addTo(map);
     }
   }
 </script>
