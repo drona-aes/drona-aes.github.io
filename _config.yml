@@ -6,8 +6,8 @@ title: "Drona - Welcome to Drona Acadamey of Engineering Studies !"
 description: "Drona Academy of Engineering Studies, Chengannur Kerala"
 keywords: "drona, academy of engineering studies, engineering tution, cusat, mg, kerala, syllabus, chengannur"
 
-#url: "http://drona.info"
-url: "http://0.0.0.0:4000"
+url: "http://drona.info"
+#url: "http://0.0.0.0:4000"
 baseurl: ""
 
 gems:
