@@ -12,3 +12,16 @@ baseurl: ""
 
 gems:
   - jekyll-sitemap
+
+
+social:
+  - title: twitter
+    url: http://
+  - title: facebook
+    url:
+  - title: stack-overflow
+    url: http://
+  - title: bitbucket
+    url: http://
+  - title: github
+    url: http://
