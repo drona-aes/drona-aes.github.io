@@ -2,55 +2,84 @@
 layout: default
 ---
 
-<div class="container">
-  <div class="jumbotron">
-    <h2>Drona Academy of Engineering Studies</h2>
-    <p class="lead">A leading provider of high standard b'tech coaching.</p>
-    <p><a class="btn btn-lg btn-success" href="{{ site.url }}/contact"
-      role="button">Find us on map !</a></p>
-  </div>
-
-  <div id="about" class="row">
-    <div class="col-lg-4">
-      <h3>All Universities/Branches</h3>
-      <p class="text-danger">Donec id elit non mi porta gravida at eget metus.
-        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-        ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-        mollis euismod. Donec sed odio dui. </p>
-    </div>
-    <div class="col-lg-4">
-      <h3>Experienced Faculty</h3>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-        tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-        massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-        euismod. Donec sed odio dui. </p>
-   </div>
-    <div class="col-lg-4">
-      <h3>Assesment of Syllabus</h3>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas
-        eget quam. Vestibulum id ligula porta felis euismod semper. Fusce
-        dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-        fermentum massa.</p>
-    </div>
-  </div>
-  <hr>
-
-  <section class="jumbotron" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h3 class="section-heading">Contact Us</h3>
-          <address>
-            <strong>Drona Academy of Engineering Studies</strong><br>
-            Palamoottil Buildings<br>
-            Govt. Hospital Junction, Chengannur<br>
-            <abbr title="Phone"><i class="fa fa-phone"></i> </abbr> (+91) 8547554839 , 9846584839<br>
-            <a href="mailto:{{ site.data.customization.email }}">drona.aes@gmail.com</a>
-          </address>
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Drona Academy</h1>
+                      <p class="intro-text">A leading provider of high standard B'Tech coaching.</p>
+                        <a href="{{ site.url }}/map/"
+                        role="button">Find us on map !</a><br>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+</header>
 
-  <hr>
-</div> <!-- /container -->
+
+<!-- Services Section -->
+<section id="about" class="container content-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">About Us</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-university fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">All Universities/Branches</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-flask fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Experienced Faculty</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Assesment of Syllabus</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact Us</h2>
+            <address>
+              <strong>Drona Academy of Engineering Studies</strong><br>
+              Palamoottil Buildings<br>
+              Govt. Hospital Junction, Chengannur<br>
+              <abbr title="Phone"><i class="fa fa-phone"></i> </abbr> (+91) 8547554839 , 9846584839<br>
+              <a href="mailto:{{ site.data.customization.email }}">drona.aes@gmail.com</a>
+            </address>
+
+            {% for network in site.data.customization.social %}
+              <span class="fa-stack fa-lg">
+              <a href="{{ network.url }}"><i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-{{ network.title }} fa-stack-1x fa-inverse"></i></a>
+            </span>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

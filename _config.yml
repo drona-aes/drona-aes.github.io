@@ -4,7 +4,7 @@
 name: "drona.info"
 title: "Drona - Welcome to Drona Acadamey of Engineering Studies !"
 description: "Drona Academy of Engineering Studies, Chengannur Kerala"
-keywords: "drona, academy of engineering studies, engineering tution, cusat, mg, kerala, syllabus, chengannur"
+keywords: "drona,academy,engineering,studies,tution,cusat,mg,kerala,syllabus,chengannur,experienced,expertise,question,exam"
 
 url: "http://drona.info"
 #url: "http://0.0.0.0:4000"
@@ -16,12 +16,12 @@ gems:
 
 social:
   - title: twitter
-    url: http://
+    url:
   - title: facebook
     url:
-  - title: stack-overflow
-    url: http://
-  - title: bitbucket
-    url: http://
+  - title: google-plus
+    url:
+  - title: whatsapp
+    url: https://github.com/drona-aes/drona-aes.github.io
   - title: github
     url: http://

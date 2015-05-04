@@ -1,40 +1,53 @@
-<!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
-<!--<nav class="navbar navbar-default navbar-fixed-top"> -->
-	<div class="container">
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+				<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+								<!--<i class="fa fa-bars"></i>-->
+			<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+						</button>
+						<a class="navbar-brand page-scroll" href="#page-top">
+								<i class="fa fa-university"></i>  <span class="light">{{ site.data.customization.site_brand_name }}</span>
+						</a>
+				</div>
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-			aria-expanded="false" aria-	 controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<!-- <span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span> -->
-				<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse  navbar-main-collapse">
+						<ul class="nav navbar-nav">
+								<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+								<li class="hidden">
+										<a href="#page-top"></a>
+								</li>
+								<li>
+										<a class="page-scroll" href="#about"><i class="fa fa-users fa-fw"></i> ABOUT</a>
+								</li>
+								<li>
+										<a class="page-scroll" href="#contact"><i class="fa fa-share fa-fw"></i> CONTACT</a>
+								</li>
+								<li>
+										<a class="page-scroll" href="{{ site.url }}/map/"><i class="fa fa-map-marker fa-fw"></i> MAP</a>
+								</li>
 
-			</button>
-			<a class="site_brand navbar-brand brand_style_change" href="{{ site.url }}" style="color: #5bc0de">{{ site.data.customization.site_brand_name }}</a>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-archive fa-fw"></i> ARCHIVE <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Nav header</li>
+									<li><a href="#">Separated link</a></li>
+									<li><a href="#">One more separated link</a></li>
+								</ul>
+							</li>
+						</ul>
+
+				</div>
+
+
+				<!-- /.navbar-collapse -->
 		</div>
-
-		<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<!--<li><a href="{{ site.url }}" class="btn btn-info disabled"><i class="fa fa-home"></i> Home</a></li>
-				<li><a href="{{ site.url }}" class="btn btn-info disabled"><i class="fa fa-users"></i> About</a></li>-->
-				<li><a class="page-scroll" href="#contact"><i class="fa fa-share fa-fw"></i> Contact</a></li>
-				<li><a href="{{ site.url }}/contact/" ><i class="fa fa-map-marker fa-fw"></i> Map</a></li>
-				<!--  <li><a href="{{ site.url }}"><i class="fa fa-share"></i> Contact</a></li> -->
-				<!--  <li class="dropdown">
-          <a href="#" class="btn btn-info disabled dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-archive"></i> Archive <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li class="dropdown-header">Syllabus</li>
-            <li><a href="#">sample1</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">Questions</li>
-            <li><a href="#">sample1</a></li>
-          </ul>
-        </li> -->
-      </ul>
-		</div><!--/.nav-collapse -->
-
-	</div>
+		<!-- /.container -->
 </nav>
