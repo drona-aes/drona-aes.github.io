@@ -12,16 +12,3 @@ baseurl: ""
 
 gems:
   - jekyll-sitemap
-
-
-social:
-  - title: twitter
-    url:
-  - title: facebook
-    url:
-  - title: google-plus
-    url:
-  - title: whatsapp
-    url: https://github.com/drona-aes/drona-aes.github.io
-  - title: github
-    url: http://
